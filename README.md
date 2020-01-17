@@ -24,7 +24,7 @@ java ChatServer 8080
 2) Starting the Client
 
 ```bash
-java Client 8080
+java Client localhost 8080
 ```
 
 *Both the Client and the Server must be run on seperate terminal windows\*
