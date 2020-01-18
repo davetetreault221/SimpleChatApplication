@@ -33,6 +33,10 @@ java Client localhost 8080
 
 In order to fully embrace the functionality of this program it is advised to open multiple terminals running the Client and seeing how multiple users can communicate with each other. 
 
+How to leave the chat:
+
+On a Client instance if you wish to leave the chat simply type "Bye"
+
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
