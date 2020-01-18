@@ -29,22 +29,26 @@ public class UserThreads extends Thread{
             OutputStream output = currentSocket.getOutputStream();
             writer = new PrintWriter(output, true);
 
-            printUsers();
-
             String userName = reader.readLine();
             selectedServer.addUserName(userName);
+
+            printUsers();
 
             String serverMessage = "New user connected: " + userName;
             selectedServer.broadcast(serverMessage, this);
 
             String clientMessage;
 
+            //Once the above setup is done this loop will continue to wait for user input
+            //*****************************************************************
             do {
                 clientMessage = reader.readLine();
                 serverMessage = "[" + userName + "]: " + clientMessage;
                 selectedServer.broadcast(serverMessage, this);
 
             } while (!clientMessage.equals("bye"));
+            //*****************************************************************
+
 
             selectedServer.removeUser(userName, this);
             currentSocket.close();

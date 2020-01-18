@@ -23,6 +23,9 @@ public class ChatServer {
 
     public void start()
     {
+
+        System.out.println("The Server is listening on port " + portNum + " for new client connections.");
+
         try{
 
             ServerSocket serverSocket = new ServerSocket(portNum);
@@ -37,7 +40,6 @@ public class ChatServer {
                 UserThreads newUser = new UserThreads(socket, this);
                 userThreads.add(newUser);
                 newUser.start();
-
             }
             //*******************************************************************
 
@@ -93,7 +95,7 @@ public class ChatServer {
 
     public void printUsers()
     {
-        System.out.println("These are all the users currently connected");
+        System.out.println("These are all the users currently connected:");
 
         for(String currentUser: userNames)
         {

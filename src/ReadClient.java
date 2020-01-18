@@ -67,7 +67,7 @@ public class ReadClient extends Thread {
 
             } catch (IOException ex) {
                 System.out.println("Error reading from server: " + ex.getMessage());
-                ex.printStackTrace();
+                //ex.printStackTrace();
                 break;
             }
         }
